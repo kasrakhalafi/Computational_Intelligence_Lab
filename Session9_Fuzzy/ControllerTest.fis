@@ -1,0 +1,40 @@
+[System]
+Name='ControllerTest'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-1 1]
+NumMFs=3
+MF1='Low':'trimf',[-1.8 -1 -0.2]
+MF2='Zero':'trimf',[-0.8 0 0.8]
+MF3='High':'trimf',[0.2 1 1.8]
+
+[Input2]
+Name='input2'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='MoreS':'trimf',[-0.4 0 0.4]
+MF2='OKS':'trimf',[0.1 0.5 0.9]
+MF3='LowerS':'trimf',[0.6 1 1.4]
+
+[Rules]
+1 0, 1 (1) : 1
+2 0, 2 (1) : 1
